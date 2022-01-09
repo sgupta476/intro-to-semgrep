@@ -2,6 +2,10 @@ name: Semgrep
 
 on:
  pull_request: {}
+ push:
+    branches:
+    - main
+    - master
 
 jobs:
   semgrep:
