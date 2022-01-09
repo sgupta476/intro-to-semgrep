@@ -1,15 +1,13 @@
-##his workflow file requires a free account on Semgrep.dev to
-# manage rules, file ignores, notifications, and more.
-#
-# See https://semgrep.dev/docs
-
 name: Semgrep
 
-  pull_request: {}
+on:
   push:
-    branches:
-    - main
-    - master
+    branches: [ master ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ master ]
+  schedule:
+    - cron: '23 16 * * 1'
 
 jobs:
   semgrep:
